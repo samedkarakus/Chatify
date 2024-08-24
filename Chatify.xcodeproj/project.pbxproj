@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		94142B102C7A22F1002C38BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94142B0F2C7A22F1002C38BF /* AppDelegate.swift */; };
 		94142B122C7A22F1002C38BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94142B112C7A22F1002C38BF /* SceneDelegate.swift */; };
-		94142B142C7A22F1002C38BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94142B132C7A22F1002C38BF /* ViewController.swift */; };
+		94142B142C7A22F1002C38BF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94142B132C7A22F1002C38BF /* ChatViewController.swift */; };
 		94142B172C7A22F1002C38BF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 94142B162C7A22F1002C38BF /* Base */; };
 		94142B1A2C7A22F1002C38BF /* Chatify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94142B182C7A22F1002C38BF /* Chatify.xcdatamodeld */; };
 		94142B1C2C7A22F2002C38BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94142B1B2C7A22F2002C38BF /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		94142B0C2C7A22F1002C38BF /* Chatify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94142B0F2C7A22F1002C38BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94142B112C7A22F1002C38BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		94142B132C7A22F1002C38BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94142B132C7A22F1002C38BF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		94142B162C7A22F1002C38BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94142B192C7A22F1002C38BF /* Chatify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chatify.xcdatamodel; sourceTree = "<group>"; };
 		94142B1B2C7A22F2002C38BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				94142B0F2C7A22F1002C38BF /* AppDelegate.swift */,
 				94142B112C7A22F1002C38BF /* SceneDelegate.swift */,
-				94142B132C7A22F1002C38BF /* ViewController.swift */,
+				94142B132C7A22F1002C38BF /* ChatViewController.swift */,
 				94142B152C7A22F1002C38BF /* Main.storyboard */,
 				94142B1B2C7A22F2002C38BF /* Assets.xcassets */,
 				94142B1D2C7A22F2002C38BF /* LaunchScreen.storyboard */,
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94142B1A2C7A22F1002C38BF /* Chatify.xcdatamodeld in Sources */,
-				94142B142C7A22F1002C38BF /* ViewController.swift in Sources */,
+				94142B142C7A22F1002C38BF /* ChatViewController.swift in Sources */,
 				94142B102C7A22F1002C38BF /* AppDelegate.swift in Sources */,
 				94142B122C7A22F1002C38BF /* SceneDelegate.swift in Sources */,
 			);
