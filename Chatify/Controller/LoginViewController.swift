@@ -7,13 +7,19 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     var isKeyboardVisible = false
+    
+
+    @IBAction func signInButtonPressed(_ sender: UIButton) {
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
