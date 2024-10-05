@@ -4,7 +4,11 @@ target 'Chatify' do
   use_frameworks!
 
   # Pods for Chatify
-  
-  pod 'CLTypingLabel', '~> 0.4.0'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
+  pod 'CLTypingLabel'
+  pod 'IQKeyboardManagerSwift'
   
 end

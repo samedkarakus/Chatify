@@ -6,40 +6,34 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
-    
+
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var isKeyboardVisible = false
-    
-
-    @IBAction func signInButtonPressed(_ sender: UIButton) {
-        
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginView.layer.cornerRadius = 25
-        loginView.clipsToBounds = true
-        textFieldChanged(emailTextField)
-        textFieldChanged(passwordTextField)
-        placeHolderColorChanged(emailTextField, placeHolder: "Email")
-        placeHolderColorChanged(passwordTextField, placeHolder: "Password")
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
+        loginRegisterViewLayout(loginView)
+    }
+
+    @IBAction func signInButtonPressed(_ sender: UIButton) {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    print("Successfully logged in.")
+                    self.performSegue(withIdentifier: Constants.loginSegue, sender: self)
+                }
+            }
+        }
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
+    
+//MARK: - UI Changes
     
     func textFieldChanged(_ textField: UIView) {
         let borderColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
@@ -56,35 +50,14 @@ class LoginViewController: UIViewController {
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
     }
-
-    @objc func keyboardWillShow(notification: NSNotification) {
-        guard !isKeyboardVisible else { return }
-
-        if let keyboardSize = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardFrame = keyboardSize.cgRectValue
-            let keyboardHeight = keyboardFrame.height
-            
-            let textFieldYPosition = loginView.frame.origin.y
-            let offset = textFieldYPosition - (self.view.frame.height - keyboardHeight - loginView.frame.height - 10)
-            
-            if offset > 0 {
-                UIView.animate(withDuration: 0.3) {
-                    self.loginView.transform = CGAffineTransform(translationX: 0, y: -offset)
-                }
-            }
-            isKeyboardVisible = true
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        UIView.animate(withDuration: 0.3) {
-            self.loginView.transform = .identity
-        }
-        isKeyboardVisible = false
-    }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+    func loginRegisterViewLayout(_ view: UIView) {
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
+        textFieldChanged(emailTextField)
+        textFieldChanged(passwordTextField)
+        placeHolderColorChanged(emailTextField, placeHolder: "Email")
+        placeHolderColorChanged(passwordTextField, placeHolder: "Password")
     }
 }
 
